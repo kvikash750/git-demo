@@ -25,5 +25,13 @@ payload]]></ee:set-payload>
 			<logger level="INFO" doc:name="Logger" doc:id="29b140b7-9987-4c16-baf4-25523ea6f988" message="#[payload]"/>
 		</foreach>
 		<logger level="INFO" doc:name="Logger" doc:id="ecaf01e1-fe6e-49e4-821e-b4dd8c4111cb" message="#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="509188e5-ff9f-47b2-9e54-1048d0f3705b" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
 	</flow>
 </mule>
